@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { postStudentData } from "@/app/actions/action";
+
 import { useRouter } from "next/navigation";
 
 function Card() {
@@ -28,8 +28,6 @@ function Card() {
     };
 
     try {
-      await postStudentData(studentData);
-
       router.push("/page/dashboard");
       alert("Student data submitted successfully");
     } catch (error) {
