@@ -1,0 +1,46 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+
+model student {
+  id        String   @id  @default(uuid()) @map("_id")
+  name      String
+  Branch    Branch
+  passedOut  String
+  placed    Placed
+  score     Score
+  @@index([Branch, placed, score])
+
+}
+
+enum Branch {
+  CSE
+  ECE
+  MECH
+  CIVIL
+  EEE
+  AIML
+}
+  enum Placed {
+    placed
+    notPlaced
+  }
+ enum Score {
+   pass
+   fail
+  }
+
+  model metaData {
+    id        String   @id  @default(uuid()) @map("_id")
+      totalStudents Int
+      totalPlaced Int @default(6)
+
+  
+  }
