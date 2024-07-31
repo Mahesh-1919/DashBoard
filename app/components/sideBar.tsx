@@ -41,11 +41,16 @@ export default function SheetDemo() {
         <SheetFooter className="flex justify-center gap-3">
           <SheetClose asChild>
             <Link href="/page/AddStudent">
-              <Button className="bg-white text-background">Add Student</Button>
+              <Button className="bg-white text-background hover:bg-secondary hover:text-white">
+                Add Student
+              </Button>
             </Link>
           </SheetClose>
           <SheetClose asChild>
-            <Button type="submit" className="bg-white text-background">
+            <Button
+              type="submit"
+              className="bg-white text-background hover:bg-secondary hover:text-white"
+            >
               Save
             </Button>
           </SheetClose>
